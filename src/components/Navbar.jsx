@@ -31,7 +31,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="bg-neutral-100 [#191d5f]  fixed z-10 w-full shadow-md ">
+        <div className="bg-neutral-100  [#191d5f]  fixed z-10 w-full shadow-md ">
             <div className="navbar flex justify-between lg:mx-16 ">
                 <div className="navbar">
                     <div className="dropdown">
