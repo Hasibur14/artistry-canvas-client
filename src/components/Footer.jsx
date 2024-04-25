@@ -1,6 +1,7 @@
 import footerImg1 from '../assets/images/Frame (6).png';
 import facebook from '../assets/images/facebook 1 (1).png';
 import linkedIn from '../assets/images/linkedin.png';
+import title from '../assets/images/title.png';
 import twitter from '../assets/images/twitter (1) 1.png';
 
 const Footer = () => {
@@ -10,8 +11,8 @@ const Footer = () => {
                 <div className="  footer p-8 text-white">
                     <aside className="lg:space-y-3 ml-10 md:ml-10 lg:ml-44 ">
                         <div className="flex">
-                            <img className="w-10 h-10" src="./images/business.png" alt="" />
-                            <h3 className="font-eb text-white text-4xl font-bold lg:ml-3">Just<span className="text-[#B68C5A]">i</span>ce</h3>
+                            <img className="w-12 h-10" src={title} alt="" />
+                            <h3 className="font-eb text-white text-4xl font-bold lg:ml-3">Art<span className="text-[#F00]">i</span>stry Canvas</h3>
                         </div>
                         <p className="text-lg font-bold opacity-75">FOLLOW US.</p>
                         <div className="flex space-x-3">

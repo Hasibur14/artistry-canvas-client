@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
+import title from '../assets/images/title.png';
 import userImg from '../assets/images/user.png';
-
-
 
 const Navbar = () => {
     // const { user, logOut } = useContext(AuthContext);
@@ -18,15 +17,15 @@ const Navbar = () => {
                 <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Home</span> </NavLink>
             </li>
             <li>
-                <NavLink to="/a" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>About</span> </NavLink>
+                <NavLink to="/allArtAndCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Art & craft</span> </NavLink>
             </li>
             <li>
-                <NavLink to="/b" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Feature</span> </NavLink>
+                <NavLink to="/AddCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Add Craft </span> </NavLink>
             </li>
             <li>
-                <NavLink to="/c" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Blog</span> </NavLink>
+                <NavLink to="/MyArtAndCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>My Art&Craft</span> </NavLink>
             </li>
-            <NavLink to="/d" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Contact</span> </NavLink>
+            <NavLink to="/gallery" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Gallery</span> </NavLink>
         </>
     );
 
@@ -42,7 +41,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-3xl gap-0 font-bold  lg:ml-28">Home<span className="text-[#F00]">Heaven</span></a>
+                    <a className="font-eb text-3xl gap-0 font-bold  lg:ml-28"> <img className="h-10 w-12" src={title} alt="" /> Artistry<span className="text-[#F00]">Canvas</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal px-1 space-x-8 text-[18px] font-bold">
@@ -79,9 +78,9 @@ const Navbar = () => {
                             </Tooltip>
                         )} */}
                     </div>
-                 <div className="">
-                 <img className="w-10 rounded-full ml-4 md:ml-20 lg:ml-0 " src={userImg} alt="" />
-                 </div>
+                    <div className="">
+                        <img className="w-10 rounded-full ml-4 md:ml-20 lg:ml-0 " src={userImg} alt="" />
+                    </div>
                     {/* {user ?
                         <button onClick={handleSignOut} className="btn ml-4 text-white bg-green-400">LOG OUT</button> :
                         <Link to='/login'>

@@ -7,6 +7,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-font-WorkSans {
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+
+.font-WorkSans {
   font-family: "Work Sans", sans-serif;
+}
+
+ font-eb {
+  font-family: 'EB Garamond', serif;
 }
