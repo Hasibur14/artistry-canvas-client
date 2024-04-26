@@ -18,8 +18,14 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
-        console.log(name, image, email, password);
+          // Password validation
+          if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
+            toast.error('Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long');
+            return;
+        }
+        
 
+        //create user and update profile
         createUser(email, password, name, image)
             .then(result => {
                 console.log(result);
