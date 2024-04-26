@@ -6,6 +6,9 @@ import Gallery from "../Pages/Gallery";
 import Home from "../Pages/Home";
 import MyArtAndCraft from "../Pages/MyArtAndCraft ";
 import ErrorPage from "../components/ErrorPage";
+import Login from "../components/User/Login";
+import Register from "../components/User/Register";
+
 
 const Router = createBrowserRouter([
     {
@@ -32,6 +35,14 @@ const Router = createBrowserRouter([
            {
             path: '/gallery',
             element: <Gallery></Gallery>
+           },
+           {
+            path: '/register',
+            element: <Register></Register>,
+           },
+           {
+            path: '/login',
+            element: <Login></Login>
            }
         ]      
     },
