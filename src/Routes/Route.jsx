@@ -40,7 +40,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/user',
-                element: <User></User>
+                element: <PrivetRoute><User></User></PrivetRoute>
             },
             {
                 path: '/register',
