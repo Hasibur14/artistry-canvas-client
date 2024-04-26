@@ -25,7 +25,12 @@ const Navbar = () => {
             <li>
                 <NavLink to="/MyArtAndCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>My Art&Craft</span> </NavLink>
             </li>
-            <NavLink to="/gallery" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Gallery</span> </NavLink>
+           <li>
+           <NavLink to="/gallery" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Gallery</span> </NavLink>
+           </li>
+           <li>
+           <NavLink to="/user" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>User</span> </NavLink>
+           </li>
         </>
     );
 
@@ -48,7 +53,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar  md:flex lg:flex space-x-4 lg:ml-72">
+                <div className="navbar  md:flex lg:flex space-x-4 lg:ml-36">
                     <div className="dropdown dropdown-end justify-center items-center">
 
                         {/* {user && (

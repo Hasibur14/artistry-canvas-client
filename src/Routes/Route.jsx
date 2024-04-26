@@ -5,6 +5,7 @@ import AllArtAndCraft from "../Pages/AllArtAndCraft";
 import Gallery from "../Pages/Gallery";
 import Home from "../Pages/Home";
 import MyArtAndCraft from "../Pages/MyArtAndCraft ";
+import User from "../Pages/User";
 import ErrorPage from "../components/ErrorPage";
 import Login from "../components/User/Login";
 import Register from "../components/User/Register";
@@ -17,8 +18,8 @@ const Router = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-               path: '/',
-               element: <Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
                 path: '/allArtAndCraft',
@@ -26,25 +27,29 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/AddCraft',
-                element:<AddCraft></AddCraft>
+                element: <AddCraft></AddCraft>
             },
-           {
-            path: '/MyArtAndCraft',
-            element: <MyArtAndCraft></MyArtAndCraft>
-           },
-           {
-            path: '/gallery',
-            element: <Gallery></Gallery>
-           },
-           {
-            path: '/register',
-            element: <Register></Register>,
-           },
-           {
-            path: '/login',
-            element: <Login></Login>
-           }
-        ]      
+            {
+                path: '/MyArtAndCraft',
+                element: <MyArtAndCraft></MyArtAndCraft>
+            },
+            {
+                path: '/gallery',
+                element: <Gallery></Gallery>
+            },
+            {
+                path: '/user',
+                element: <User></User>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>,
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            }
+        ]
     },
 ]);
 

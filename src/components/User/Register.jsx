@@ -1,12 +1,14 @@
-import { useState } from "react";
-// import { Helmet } from "react-helmet-async";
+import { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
-   
-    const [showPassword, setShowPassword] = useState(false)
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -16,11 +18,32 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
- console.log(name, image, email, password)
+        console.log(name, image, email, password);
+
+        createUser(email, password, name, image)
+            .then(result => {
+                console.log(result);
+                toast.success('User created successfully');
+                updateUserProfile(name, image)
+                    .then(() => {
+                        toast.success('Update user profile successfully');
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        toast.error(error.message);
+                    });
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
+            });
     };
 
     return (
         <div>
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
             <div className="hero my-10">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-200 border-2">
                     <div>
@@ -51,14 +74,14 @@ const Register = () => {
                             </label>
                             <div className="mb-4 relative border-2">
                                 <input
-                                    className=" w-full bg-white rounded-lg p-2"
+                                    className="w-full bg-white rounded-lg p-2"
                                     type={showPassword ? "text" : "password"}
                                     name="password"
                                     placeholder="Your Password"
                                     id="" required />
                                 <span className="absolute top-3 right-2" onClick={() => setShowPassword(!showPassword)}>
                                     {
-                                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                        showPassword ? <FaEyeSlash /> : <FaEye />
                                     }
                                 </span>
                             </div>
@@ -67,7 +90,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#F00]  text-white">Register</button>
+                            <button className="btn bg-[#F00] text-white">Register</button>
                         </div>
                     </form>
                     <p className="text-center mb-6">Already have an account? <Link to='/login' className="text-blue-500 font-semibold">Login</Link></p>
