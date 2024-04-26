@@ -8,14 +8,14 @@ const PrivetRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
-    console.log(location.pathname)
+    // console.log(location.pathname)
 
     if (loading) {
         return <div className="container lg:mx-[800px] mt-16 ">
-           <span className="loading loading-spinner loading-xs"></span>
-<span className="loading loading-spinner loading-sm"></span>
-<span className="loading loading-spinner loading-md"></span>
-<span className="loading loading-spinner loading-lg"></span>
+            <span className="loading loading-spinner loading-xs"></span>
+            <span className="loading loading-spinner loading-sm"></span>
+            <span className="loading loading-spinner loading-md"></span>
+            <span className="loading loading-spinner loading-lg"></span>
         </div>
     }
 
