@@ -1,15 +1,19 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import { AuthContext } from "../Provider/AuthProvider";
 import title from '../assets/images/title.png';
 import userImg from '../assets/images/user.png';
 
 const Navbar = () => {
-    // const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user)
 
-    // const handleSignOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch()
-    // }
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const links = (
         <>
@@ -25,12 +29,12 @@ const Navbar = () => {
             <li>
                 <NavLink to="/MyArtAndCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>My Art&Craft</span> </NavLink>
             </li>
-           <li>
-           <NavLink to="/gallery" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Gallery</span> </NavLink>
-           </li>
-           <li>
-           <NavLink to="/user" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>User</span> </NavLink>
-           </li>
+            <li>
+                <NavLink to="/gallery" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Gallery</span> </NavLink>
+            </li>
+            <li>
+                <NavLink to="/user" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>User</span> </NavLink>
+            </li>
         </>
     );
 
@@ -56,7 +60,7 @@ const Navbar = () => {
                 <div className="navbar  md:flex lg:flex space-x-4 lg:ml-36">
                     <div className="dropdown dropdown-end justify-center items-center">
 
-                        {/* {user && (
+                        {user && (
                             <Tooltip
                                 title={user && user.displayName ? user.displayName : "User name not found"}
                                 position="left"
@@ -64,30 +68,23 @@ const Navbar = () => {
                             >
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
-                                        <img alt={user && user.displayName ? user.displayName : "User name not found"} src={user && user.photoURL ? user.photoURL : userImage} />
+                                        <img alt={user && user.displayName ? user.displayName : "User name not found"} src={user && user.photoURL ? user.photoURL : userImg} />
                                     </div>
                                 </div>
                             </Tooltip>
-                        )} */}
+                        )}
                     </div>
-                    <div className="">
-                        <img className="w-10 rounded-full ml-4 md:ml-20 lg:ml-0 " src={userImg} alt="" />
-                    </div>
-                    {/* {user ?
-                        <button onClick={handleSignOut} className="btn ml-4 text-white bg-green-400">LOG OUT</button> :
+                    {user ?
+                        <button onClick={handleSignOut} className="hidden lg:flex bg-[#F00] px-6 py-3 font-bold rounded-md text-lg hover:bg-transparent border-2 border-[#F00] text-white hover:text-[#F00]">LOG OUT</button> :
                         <Link to='/login'>
-                            <button className="btn ml-4 bg-green-400 text-white">LOG IN</button>
+                            <button className="hidden lg:flex bg-[#F00] px-6 py-3 font-bold rounded-md text-lg hover:bg-transparent border-2 border-[#F00] text-white hover:text-[#F00]">LOG IN</button>
                         </Link>
-                    } */}
+
+                    }
                     <div>
-                       <Link to='/login'>
-                       <button className="hidden lg:flex bg-[#F00] px-6 py-3 font-bold rounded-md text-lg hover:bg-transparent border-2 border-[#F00] text-white hover:text-[#F00]">Login</button>
-                       </Link>
-                    </div>
-                    <div>
-                       <Link to='/register'>
-                       <button className="hidden lg:flex bg-transparent px-6 py-3 font-bold rounded-md text-lg hover:bg-[#F00] border-2 border-[#F00] text-[#F00] hover:text-white">Register</button>
-                       </Link>
+                        <Link to='/register'>
+                            <button className="hidden lg:flex bg-transparent px-6 py-3 font-bold rounded-md text-lg hover:bg-[#F00] border-2 border-[#F00] text-[#F00] hover:text-white">Register</button>
+                        </Link>
                     </div>
                 </div>
             </div>
