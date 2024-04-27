@@ -61,7 +61,7 @@ const Banner = () => {
                         <img className='animate__animated animate__slideInUp w-full rounded-xl lg:h-[800px]' src={image1} alt="Slide 1" />
                         <div className="gradient-overlay" style={gradientOverlayStyle}></div>
                         <div className="text-overlay space-y-5" style={textOverlayStyle}>
-                            <h2 className='text-3xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
+                            <h2 className='text-2xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
                             <a href="#_" className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
                                 <span className="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-[#F00] rounded-md group-hover:mt-0 group-hover:ml-0"></span>
                                 <span className="absolute inset-0 w-full h-full bg-white rounded-md "></span>
@@ -76,7 +76,7 @@ const Banner = () => {
                         <img className='animate__animated animate__slideInUp w-full rounded-xl lg:h-[800px]' src={image2} alt="Slide 2" />
                         <div className="gradient-overlay" style={gradientOverlayStyle}></div>
                         <div className="text-overlay space-y-5" style={textOverlayStyle}>
-                            <h2 className='text-3xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
+                            <h2 className='text-2xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
                             <a href="#_" className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
                                 <span className="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-[#F00] rounded-md group-hover:mt-0 group-hover:ml-0"></span>
                                 <span className="absolute inset-0 w-full h-full bg-white rounded-md "></span>
@@ -91,7 +91,7 @@ const Banner = () => {
                         <img className='animate__animated animate__slideInUp w-full rounded-xl lg:h-[800px]' src={image3} alt="Slide 3" />
                         <div className="gradient-overlay" style={gradientOverlayStyle}></div>
                         <div className="text-overlay space-y-5" style={textOverlayStyle}>
-                            <h2 className='text-3xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
+                            <h2 className='text-2xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
                             <a href="#_" className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
                                 <span className="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-[#F00] rounded-md group-hover:mt-0 group-hover:ml-0"></span>
                                 <span className="absolute inset-0 w-full h-full bg-white rounded-md "></span>
@@ -106,7 +106,7 @@ const Banner = () => {
                         <img className='animate__animated animate__slideInUp w-full rounded-xl lg:h-[800px]' src={image4} alt="Slide 4" />
                         <div className="gradient-overlay" style={gradientOverlayStyle}></div>
                         <div className="text-overlay space-y-5" style={textOverlayStyle}>
-                            <h2 className='text-3xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
+                            <h2 className='text-2xl md:text-5xl lg:text-7xl  font-bold animate__animated animate__backInDown'> Elevating Your Artistic Journey - Explore, Create, and Inspire</h2>
                             <a href="#_" className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
                                 <span className="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-[#F00] rounded-md group-hover:mt-0 group-hover:ml-0"></span>
                                 <span className="absolute inset-0 w-full h-full bg-white rounded-md "></span>

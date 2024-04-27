@@ -75,7 +75,7 @@ const Navbar = () => {
                     <a className=" text-xl lg:text-3xl mr-14 lg:mr-0 gap-0 font-bold  lg:ml-28"> <img className="h-10 w-12" src={title} alt="" /> Artistry<span className="text-[#F00]">Canvas</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu-horizontal px-1 space-x-8 text-[18px] font-bold">
+                    <ul className="menu-horizontal px-1 space-x-8 text-[16px] font-bold">
                         {links}
                     </ul>
                 </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
                     <div onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
                         {/* Conditionally render user image */}
                         {user && user.photoURL ? (
-                            <img className="w-12 rounded-full border-[#F00]" src={user.photoURL} alt="User" />
+                            <img className="w-12 h-12 rounded-full border-2 border-[#F00]" src={user.photoURL} alt="User" />
                         ) : null}
 
                         {isHovering && user && (
