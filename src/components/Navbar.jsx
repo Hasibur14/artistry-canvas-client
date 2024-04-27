@@ -38,7 +38,7 @@ const Navbar = () => {
                 <NavLink to="/allArtAndCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Art & craft</span> </NavLink>
             </li>
             <li>
-                <NavLink to="/AddCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Add Craft </span> </NavLink>
+                <NavLink to="/AddCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>Add Art&Craft  </span> </NavLink>
             </li>
             <li>
                 <NavLink to="/MyArtAndCraft" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF497C] border-b-4 border-[#FF497C]" : "hover:text-[#FF497C]"} > <span>My Art&Craft</span> </NavLink>
