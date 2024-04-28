@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import { TbDetailsOff } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 
-
 const CraftItems = ({ craftItem }) => {
 
-    const { _id, name, image, email, item, subcategory, description, rating, customization, time, price, stock } = craftItem;
+    const { _id, image, item, subcategory, rating, price, stock } = craftItem;
 
     return (
         <div>
@@ -30,7 +30,6 @@ const CraftItems = ({ craftItem }) => {
                                 </svg>
                             </button>
                         </div>
-                        {/* product image */}
                         <div className=" h-[220px] w-full rounded-2xl dark:bg-[#0F172A]">
                             <img
 
@@ -90,5 +89,21 @@ const CraftItems = ({ craftItem }) => {
         </div>
     );
 };
+
+
+
+CraftItems.propTypes = {
+    craftItem: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        item: PropTypes.string.isRequired,
+        subcategory: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+        price: PropTypes.number.isRequired,
+        stock: PropTypes.number.isRequired,
+    }).isRequired,
+};
+
+
 
 export default CraftItems;
