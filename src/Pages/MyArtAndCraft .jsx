@@ -6,10 +6,10 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const MyArtAndCraft = () => {
     const [userArtCrafts, setUserArtCrafts] = useState([]);
+    const [customizationFilter, setCustomizationFilter] = useState('all');
     const { user } = useContext(AuthContext) || {};
 
     useEffect(() => {
-
         if (user?.email) {
             fetch(`http://localhost:5000/myArtAndCraft/${user?.email}`)
                 .then(response => response.json())
@@ -17,15 +17,39 @@ const MyArtAndCraft = () => {
                     setUserArtCrafts(data)
                 })
         }
-
     }, [user?.email]);
+
+
+    const filteredArtCrafts = userArtCrafts.filter(artCraft => {
+        if (customizationFilter === 'all') {
+            return true;
+        } else if (customizationFilter === 'yes') {
+            return artCraft.customization === 'yes';
+        } else if (customizationFilter === 'no') {
+            return artCraft.customization === 'no';
+        }
+    });
+
+
+
 
     return (
         <div className="container mx-auto mt-8 mb-16">
+            <div className="text-center">
+                <select
+                    className="select select-error w-full max-w-xs mb-10"
+                    value={customizationFilter}
+                    onChange={e => setCustomizationFilter(e.target.value)}
+                >
+                    <option value="all">All</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                {userArtCrafts.map(artCraft => (
-                    <section key={artCraft._id} className=" border rounded-lg">
+                {filteredArtCrafts.map(artCraft => (
+                    <section key={artCraft._id} className="border-2 rounded-lg">
                         <div className="flex space-x-6 p-6">
                             <div className="w-2/5 ">
                                 <img className="rounded-xl w-full h-48" src={artCraft.image} alt="" />

@@ -91,8 +91,8 @@ const AddCraft = () => {
                                     id="customization"
                                     className="w-full p-3 border rounded-md focus:outline-[#FF497C]"
                                 >
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
+                                    <option value="yes">yes</option>
+                                    <option value="no">no</option>
                                 </select>
                             </div>
                             <div className="col-span-full sm:col-span-2">
