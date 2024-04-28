@@ -5,17 +5,18 @@ import image from '../assets/images/banner-4.jpg';
 
 
 
-
 const MyArtAndCraft = () => {
     return (
-        <div className="container mx-auto mt-6 mb-16 ">
+        <div className="container mx-auto mt-8 mb-16 ">
 
 
-            <select className="select select-error w-full max-w-xs mb-10">
+          <div className="text-center">
+          <select className="select select-error w-full max-w-xs mb-10 ">
                 <option disabled selected>Customization</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
+          </div>
 
 
 
