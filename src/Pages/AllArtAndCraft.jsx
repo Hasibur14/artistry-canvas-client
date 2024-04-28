@@ -1,12 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllArtAndCraft = () => {
 
     const artAndCrafts = useLoaderData();
 
+  
 
     return (
-        <div className="container mx-auto my-6 border-2">
+        <div className="container mx-auto my-6 border-2 rounded-sm">
             <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
                 <div className="overflow-x-auto">
                     <table className="table">
@@ -28,7 +29,7 @@ const AllArtAndCraft = () => {
                                     <td>{item.email}</td>
                                     <td>{item.subcategory}</td>
                                     <td>{item.price}</td>
-                                    <td><button className="btn bg-[#F00] text-white">View Details</button></td>
+                                    <td><Link to={`/artCraft/${item._id}`} className="btn bg-[#F00] text-white">View Details</Link></td>
                                 </tr>
                             ))}
                         </tbody>
