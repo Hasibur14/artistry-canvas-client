@@ -11,8 +11,6 @@ const AddCraft = () => {
     const handleAddCraft = e => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const name = formData.get('name');
-        const email = formData.get('email');
         const item = formData.get('item');
         const subcategory = formData.get('subcategory');
         const description = formData.get('description');
@@ -22,10 +20,9 @@ const AddCraft = () => {
         const time = formData.get('time');
         const price = formData.get('price');
         const stock = formData.get('stock');
-        const userEmail = user.displayName;
+        const userEmail = user.email;
 
-        const newCraft = { name, email, item, subcategory, description, image, rating, customization, time, price, stock, userEmail };
-        // console.log(newCraft)
+        const newCraft = { item, subcategory, description, image, rating, customization, time, price, stock, userEmail };
 
         fetch('http://localhost:5000/artCraft', {
             method: 'POST',
@@ -61,14 +58,6 @@ const AddCraft = () => {
                     <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
-                                <label htmlFor="name" className="text-sm">Name</label>
-                                <input id="name" name="name" type="text" placeholder="your name" className="w-full rounded-md dark:text-gray-50 dark:border-gray-300 p-3 border focus:outline-[#FF497C]" />
-                            </div>
-                            <div className="col-span-full sm:col-span-3">
-                                <label htmlFor="email" className="text-sm">Email</label>
-                                <input id="email" name="email" type="email" placeholder="email" className="w-full rounded-md dark:text-gray-50 dark:border-gray-300 p-3 border focus:outline-[#FF497C]" />
-                            </div>
-                            <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="item" className="text-sm">Item Name</label>
                                 <input id="item" name="item" type="text" placeholder="item name" className="w-full rounded-md dark:text-gray-50 dark:border-gray-300 p-3 border focus:outline-[#FF497C]" />
                             </div>
@@ -86,10 +75,6 @@ const AddCraft = () => {
                                     <option value="charcoalSketching">Charcoal Sketching</option>
                                     <option value="cartoonDrawing">Cartoon Drawing</option>
                                 </select>
-                            </div>
-                            <div className="col-span-full">
-                                <label htmlFor="description" className="text-sm">Description</label>
-                                <input id="description" name="description" type="text" placeholder="description" className="w-full rounded-md dark:text-gray-50 dark:border-gray-300 p-3 border focus:outline-[#FF497C]" />
                             </div>
                             <div className="col-span-full sm:col-span-2">
                                 <label htmlFor="image" className="text-sm">Image URL</label>
@@ -129,6 +114,10 @@ const AddCraft = () => {
                                     <option value="madeToOrder">Made to Order</option>
                                     <option value="notAvailable">Not Available</option>
                                 </select>
+                            </div>
+                            <div className="col-span-full">
+                                <label htmlFor="description" className="text-sm">Description</label>
+                                <input id="description" name="description" type="text" placeholder="description" className="w-full rounded-md dark:text-gray-50 dark:border-gray-300 p-3 border focus:outline-[#FF497C]" />
                             </div>
                             <div className="col-span-full">
                                 <button type="submit" className="btn bg-[#F00] w-full text-white focus:outline-[#FF497C]">ADD</button>
