@@ -17,7 +17,7 @@ const CreativeVision = () => {
                         <div className="text-center space-y-4 ">
                             <h1 className="font-semibold text-xl">Landscape Painting</h1>
                             <p className="opacity-80">Immerse yourself in natures beauty with our Landscape Painting collection. From majestic mountains to tranquil forests.</p>
-                            <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Landscape Painting</button>
+                            <button className='btn p-3 bg-transparent w-full text-[#F00] border-2 border-[#F00] rounded-md'>Landscape Painting</button>
                         </div>
                     </div>
 
@@ -28,7 +28,7 @@ const CreativeVision = () => {
                         <div className="text-center space-y-4 ">
                             <h1 className="font-semibold text-xl">Portrait Drawing</h1>
                             <p className="opacity-80">Portrait drawing is the art of capturing the likeness and personality of a person through the use of various drawing techniques.  </p>
-                            <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Portrait Drawing</button>
+                            <button className='btn p-3 bg-transparent w-full text-[#F00] border-2 border-[#F00] rounded-md'>Portrait Drawing</button>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@ const CreativeVision = () => {
                             <h1 className="font-semibold text-xl">Watercolour Painting</h1>
                             <p className="opacity-80">
                                 Watercolor painting is a versatile and expressive medium where pigments are suspended in water and applied to paper. Artists use brushes to create..</p>
-                                <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Watercolour Painting</button>
+                                <button className='btn p-3 bg-transparent w-full text-[#F00] border-2 border-[#F00] rounded-md'>Watercolour Painting</button>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@ const CreativeVision = () => {
                         <div className="text-center space-y-4 ">
                             <h1 className="font-semibold text-xl">Oil Painting</h1>
                             <p className="opacity-80">Oil painting is a traditional and versatile medium where pigments are mixed with oil, typically linseed oil, to create a viscous paint.</p>
-                            <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Oil Painting</button>
+                            <button className='btn p-3 bg-transparent w-full text-[#F00] border-2 border-[#F00] rounded-md'>Oil Painting</button>
                         </div>
                     </div>
                     <div className=" shadow-xl rounded-md p-8 border" data-aos="flip-down">
@@ -61,7 +61,7 @@ const CreativeVision = () => {
                         <div className="text-center space-y-4 ">
                             <h1 className="font-semibold text-xl">Charcoal Sketching</h1>
                             <p className="opacity-80">Charcoal sketching is a dynamic and expressive drawing technique using charcoal sticks or pencils to create sketches on paper or other surfaces.</p>
-                            <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Charcoal Sketching</button>
+                            <button className='btn p-3 bg-transparent w-full text-[#F00] border-2 border-[#F00] rounded-md'>Charcoal Sketching</button>
                         </div>
                     </div>
                     <div className=" shadow-xl rounded-md p-8 border " data-aos="flip-right">
@@ -72,7 +72,7 @@ const CreativeVision = () => {
                             <h1 className="font-semibold text-xl">Cartoon Drawing</h1>
                             <p className="opacity-80">
                                 Cartoon drawing is a stylized and simplified form of visual expression that often emphasizes humor, exaggeration, and caricature. </p>
-                                <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Cartoon Drawing</button>
+                                <button className='btn p-3 bg-transparent w-full text-[#F00] border-2 border-[#F00] rounded-md'>Cartoon Drawing</button>
                         </div>
                     </div>
 
