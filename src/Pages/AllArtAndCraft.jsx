@@ -4,39 +4,40 @@ const AllArtAndCraft = () => {
 
     const artAndCrafts = useLoaderData();
 
-  
-
     return (
         <div className="container mx-auto my-6 border-2 rounded-sm">
             <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table w-full">
                         <thead>
                             <tr>
-                                <th>Index</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Subcategory</th>
-                                <th>Price</th>
-                                <th>Action</th>
+                                <th className="hidden md:table-cell">Index</th>
+                                <th className="table-cell md:hidden">Idx</th>
+                                <th className="table-cell">Subcategory Name</th>
+                                <th className="table-cell">Stock Status</th>
+                                <th className="table-cell">Processing Time</th>
+                                <th className="table-cell">Price</th>
+                                <th className="table-cell">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {artAndCrafts.map((item, index) => (
                                 <tr key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.email}</td>
-                                    <td>{item.subcategory}</td>
-                                    <td>{item.price}</td>
-                                    <td><Link to={`/artCraft/${item._id}`} className="btn bg-[#F00] text-white">View Details</Link></td>
+                                    <td className="hidden md:table-cell">{index + 1}</td>
+                                    <td className="table-cell md:hidden">{index + 1}</td>
+                                    <td className="table-cell">{item.subcategory}</td>
+                                    <td className="table-cell">{item.stock}</td>
+                                    <td className="table-cell">{item.time}</td>
+                                    <td className="table-cell">{item.price}</td>
+                                    <td className="table-cell">
+                                        <Link to={`/artCraft/${item._id}`} className="btn bg-[#F00] text-white">View Details</Link>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
     );
 };

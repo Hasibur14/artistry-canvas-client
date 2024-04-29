@@ -2,12 +2,15 @@ import { useContext, useEffect, useState } from 'react';
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa6";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const MyArtAndCraft = () => {
     const [userArtCrafts, setUserArtCrafts] = useState([]);
     const [customizationFilter, setCustomizationFilter] = useState('all');
     const { user } = useContext(AuthContext) || {};
+
 
     useEffect(() => {
         if (user?.email) {
@@ -31,6 +34,41 @@ const MyArtAndCraft = () => {
     });
 
 
+    //Delete
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/artCraftDelete/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            })
+                            const remaining = userArtCrafts.filter(coff => coff._id !== _id)
+                            setUserArtCrafts(remaining)
+                        }
+                    })
+            }
+        });
+    }
+
 
 
     return (
@@ -41,6 +79,7 @@ const MyArtAndCraft = () => {
                     value={customizationFilter}
                     onChange={e => setCustomizationFilter(e.target.value)}
                 >
+                    <option value="all">Customization</option>
                     <option value="all">All</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -62,9 +101,14 @@ const MyArtAndCraft = () => {
                                 <p> <span className="font-bold">Stock Status: </span>{artCraft.stock}</p>
                             </div>
                             <div className="space-y-1 mt-6" >
+
                                 <button className='flex w-28 bg-[#D2B48C] text-white  px-4 py-2 rounded-t-lg'> <span className="text-xl mr-2"><FaRegEye /></span>View</button>
-                                <button className='flex w-28 bg-cyan-600 text-white  px-4 py-2 dark:bg-sky-500'> <span className="text-xl mr-2"><MdOutlineBrowserUpdated /></span>Update</button>
-                                <button className='flex w-28 bg-[#EA4744] text-white  px-4 py-2 rounded-b-lg'> <span className="text-xl mr-2"><AiOutlineDelete /></span>  Delete</button>
+
+                                <Link to={`/artCraftUpdate/${artCraft._id}`} className='flex w-28 bg-cyan-600 text-white  px-4 py-2 dark:bg-sky-500'> <span className="text-xl mr-2"><MdOutlineBrowserUpdated /></span>Update</Link>
+
+
+                                <button onClick={() => handleDelete(artCraft._id)} className='flex w-28 bg-[#EA4744] text-white  px-4 py-2 rounded-b-lg'> <span className="text-xl mr-2"><AiOutlineDelete /></span>  Delete</button>
+
                             </div>
                         </div>
                     </section>
