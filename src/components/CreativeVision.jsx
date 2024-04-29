@@ -1,16 +1,16 @@
 import title2 from '../assets/images/title2.png';
 
-const Categories = () => {
+const CreativeVision = () => {
     return (
-        <div className="my-16">
+        <div className='my-16'>
             <div className="text-center space-y-4">
-                <h3 className="text-2xl lg:text-5xl font-bold">Unleash Your Creative Vision</h3>
+                <h3 className="text-2xl lg:text-5xl font-bold">Unleash Our Creative Vision</h3>
                 <p className="w-[50%] mx-auto opacity-70">Step into our art and craft section, where creativity knows no bounds. Wander through a world of imagination and skill, where every stroke of a brush and every delicate stitch tells a story.!</p>
             </div>
 
             <div className="container mx-auto mt-20 p-2 md:p-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-16 lg:gap-28">
-                    <div className=" shadow-xl rounded-md p-8 border">
+                    <div className=" shadow-xl rounded-md p-8 border " data-aos="flip-left">
                         <div className="h-20 w-20 rounded-full bg-green-400 mx-auto flex items-center justify-center ">
                             <img className='w-12 h-12' src={title2} alt="" />
                         </div>
@@ -21,7 +21,7 @@ const Categories = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl rounded-md p-8 border">
+                    <div className=" shadow-xl rounded-md p-8 border" data-aos="flip-down">
                         <div className="h-20 w-20 rounded-full bg-pink-500 mx-auto flex items-center justify-center ">
                             <img className='w-12 h-12' src={title2} alt="" />
                         </div>
@@ -32,7 +32,7 @@ const Categories = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl rounded-md p-8 border">
+                    <div className=" shadow-xl rounded-md p-8 border" data-aos="flip-right">
                         <div className="h-20 w-20 rounded-full bg-blue-400 mx-auto flex items-center justify-center ">
                             <img className='w-12 h-12' src={title2} alt="" />
                         </div>
@@ -44,7 +44,7 @@ const Categories = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl rounded-md p-8 border">
+                    <div className=" shadow-xl rounded-md p-8 border" data-aos="flip-left">
                         <div className="h-20 w-20 rounded-full bg-red-400 mx-auto flex items-center justify-center ">
                             <img className='w-12 h-12' src={title2} alt="" />
                         </div>
@@ -54,7 +54,7 @@ const Categories = () => {
                             <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Oil Painting</button>
                         </div>
                     </div>
-                    <div className=" shadow-xl rounded-md p-8 border">
+                    <div className=" shadow-xl rounded-md p-8 border" data-aos="flip-down">
                         <div className="h-20 w-20 rounded-full bg-yellow-500 mx-auto flex items-center justify-center ">
                             <img className='w-12 h-12' src={title2} alt="" />
                         </div>
@@ -64,7 +64,7 @@ const Categories = () => {
                             <button className='btn p-3 bg-[#F00] w-full text-white rounded-md'>Charcoal Sketching</button>
                         </div>
                     </div>
-                    <div className=" shadow-xl rounded-md p-8 border ">
+                    <div className=" shadow-xl rounded-md p-8 border " data-aos="flip-right">
                         <div className="h-20 w-20 rounded-full bg-purple-500 mx-auto flex items-center justify-center ">
                             <img className='w-12 h-12' src={title2} alt="" />
                         </div>
@@ -78,9 +78,8 @@ const Categories = () => {
 
                 </div>
             </div>
-
         </div>
     );
 };
 
-export default Categories;
+export default CreativeVision;

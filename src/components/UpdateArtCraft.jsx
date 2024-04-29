@@ -5,9 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateArtCraft = () => {
 
-    //    const art = useLoaderData()
-    //    console.log(art)
-
     const { id } = useParams()
 
 

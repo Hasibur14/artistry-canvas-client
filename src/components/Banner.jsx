@@ -49,7 +49,7 @@ const Banner = () => {
     };
 
     return (
-        <div className="mt-6 p-2 lg:p-0 mb-10">
+        <div className="container mx-auto mt-4 p-2 lg:p-0 mb-10">
             <Swiper
                 ref={swiperRef}
                 slidesPerView={1}

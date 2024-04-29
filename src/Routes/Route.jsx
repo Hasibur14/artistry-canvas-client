@@ -7,6 +7,7 @@ import Home from "../Pages/Home";
 import MyArtAndCraft from "../Pages/MyArtAndCraft ";
 import User from "../Pages/User";
 import PrivetRoute from "../Provider/PrivetRoute";
+import ArtCraftCategories from "../components/ArtCraftCategories";
 import CraftDetails from "../components/CraftDetails";
 import ErrorPage from "../components/ErrorPage";
 import UpdateArtCraft from "../components/UpdateArtCraft";
@@ -23,7 +24,12 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/artCraft')
+            },
+
+            {
+                path: '/artCraftCategories',
+                element: <ArtCraftCategories></ArtCraftCategories>,
+                loader: () => fetch('http://localhost:5000/artCraftCategories')
             },
             {
                 path: '/allArtAndCraft',
@@ -33,10 +39,10 @@ const Router = createBrowserRouter([
             {
                 path: '/artCraft/:id',
                 element: <PrivetRoute><CraftDetails></CraftDetails></PrivetRoute>,
-              
+
                 loader: ({ params }) =>
-                fetch(`http://localhost:5000/artCraft/${params.id}`)
-                  
+                    fetch(`http://localhost:5000/artCraft/${params.id}`)
+
             },
             {
                 path: '/AddCraft',
@@ -66,7 +72,7 @@ const Router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
-            }
+            },
         ]
     },
 ]);

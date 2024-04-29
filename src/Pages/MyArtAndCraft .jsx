@@ -3,8 +3,11 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa6";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { LinearGradient } from 'react-text-gradients';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
+
+
 
 const MyArtAndCraft = () => {
     const [userArtCrafts, setUserArtCrafts] = useState([]);
@@ -73,6 +76,14 @@ const MyArtAndCraft = () => {
 
     return (
         <div className="container mx-auto mt-8 mb-16">
+            <div className='text-center'>
+                <h2 className='text-5xl font-bold'><LinearGradient gradient={['to left', '#F00 ,#DB0CCB']}>
+                  My Listed Data
+                    </LinearGradient></h2>
+                    <br />
+                    <h4 className='text-xl font-bold italic'> Data Sort by Customization base Categories!!</h4>
+                   <br />
+            </div>
             <div className="text-center">
                 <select
                     className="select select-error w-full max-w-xs mb-10"
@@ -102,7 +113,7 @@ const MyArtAndCraft = () => {
                             </div>
                             <div className="space-y-1 mt-6" >
 
-                                <button className='flex w-28 bg-[#D2B48C] text-white  px-4 py-2 rounded-t-lg'> <span className="text-xl mr-2"><FaRegEye /></span>View</button>
+                                <Link to={`/artCraft/${artCraft._id}`} className='flex w-28 bg-[#D2B48C] text-white  px-4 py-2 rounded-t-lg'> <span className="text-xl mr-2"><FaRegEye /></span>View</Link>
 
                                 <Link to={`/artCraftUpdate/${artCraft._id}`} className='flex w-28 bg-cyan-600 text-white  px-4 py-2 dark:bg-sky-500'> <span className="text-xl mr-2"><MdOutlineBrowserUpdated /></span>Update</Link>
 
