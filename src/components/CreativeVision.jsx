@@ -2,7 +2,7 @@ import title2 from '../assets/images/title2.png';
 
 const CreativeVision = () => {
     return (
-        <div className='my-16'>
+        <div className='my-24'>
             <div className="text-center space-y-4">
                 <h3 className="text-2xl lg:text-5xl font-bold">Unleash Our Creative Vision</h3>
                 <p className="w-[50%] mx-auto opacity-70">Step into our art and craft section, where creativity knows no bounds. Wander through a world of imagination and skill, where every stroke of a brush and every delicate stitch tells a story.!</p>

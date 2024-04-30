@@ -13,6 +13,7 @@ const MyArtAndCraft = () => {
     const [userArtCrafts, setUserArtCrafts] = useState([]);
     const [customizationFilter, setCustomizationFilter] = useState('all');
     const { user } = useContext(AuthContext) || {};
+    
 
 
     useEffect(() => {

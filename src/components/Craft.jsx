@@ -5,6 +5,9 @@ import { TbDetailsOff } from "react-icons/tb";
 import { Link } from "react-router-dom";
 AOS.init();
 
+
+
+
 const Craft = ({ craft }) => {
 
     const { _id, image, item, subcategory, rating, price, stock } = craft;

@@ -10,6 +10,7 @@ import PrivetRoute from "../Provider/PrivetRoute";
 import ArtCraftCategories from "../components/ArtCraftCategories";
 import CraftDetails from "../components/CraftDetails";
 import ErrorPage from "../components/ErrorPage";
+import SingleCategory from "../components/SingleCategory";
 import UpdateArtCraft from "../components/UpdateArtCraft";
 import Login from "../components/User/Login";
 import Register from "../components/User/Register";
@@ -30,6 +31,11 @@ const Router = createBrowserRouter([
                 path: '/artCraftCategories',
                 element: <ArtCraftCategories></ArtCraftCategories>,
                 loader: () => fetch('http://localhost:5000/artCraftCategories')
+            },
+            {
+                path: '/artCraftCategories/:subcategory',
+                element: <SingleCategory></SingleCategory>,
+                loader: ({params}) => fetch(`http://localhost:5000/artCraftCategories/${params.subcategory}`)
             },
             {
                 path: '/allArtAndCraft',

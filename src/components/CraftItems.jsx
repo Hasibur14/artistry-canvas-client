@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { GrFormNextLink } from "react-icons/gr";
 import Craft from "./Craft";
+
 
 const CraftItems = () => {
     const [art, setArt] = useState([]);
@@ -33,10 +35,11 @@ const CraftItems = () => {
                 {!showAll && (
                     <div className="text-center mt-10">
                         <button
-                            className="btn bg-[#F00] text-white px-6"
+                            className="btn bg-[#F00] text-white px-4"
                             onClick={handleClickSeeMore}
                         >
                             See More
+                           <span className="text-2xl"> <GrFormNextLink /></span>
                         </button>
                     </div>
                 )}

@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import { MdOutlineExplore } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 
 const ArtCraftCategories = () => {
 
-    const [categories, setCategories] = useState()
+    const [categories, setCategories] = useState([])
 
-    useEffect((() => {
+    useEffect(() => {
         fetch('http://localhost:5000/artCraftCategories')
             .then(res => res.json())
             .then(data => {
-                setCategories(data)
+                setCategories(data);
             })
-    }), [])
+            .catch(error => console.error('Error fetching categories:', error));
+    }, []);
+
+
+
 
 
     return (
@@ -28,8 +33,8 @@ const ArtCraftCategories = () => {
                             data-aos-anchor-placement="center-bottom">
                             <div className="flex flex-col">
                                 <div className="relative h-62 w-full mb-3">
-                                    <div className="absolute flex flex-col top-5 right-0 p-3">
-                                        <h4 className="text-">{craftCategory.subcategory}</h4>
+                                    <div className="absolute  top- right-0 p-3">
+                                        <h5 className="transition ease-in duration-300  text-[#FF497C] shadow hover:text-black border hover:shadow-md  rounded-full w-8 h-8 text-center p-1">HR</h5>
                                     </div>
                                     <div className=" h-[220px] w-full rounded-2xl dark:bg-[#0F172A]">
                                         <img
@@ -43,7 +48,7 @@ const ArtCraftCategories = () => {
                                 <div className="space-y-5">
                                     <div className="space-y-4">
                                         <div className="flex justify-between">
-                                            <h4 className=" text-gray-600 dark:text-gray-300 font-extrabold text-xl hover:text-[#FF497C]">{craftCategory.subcategory}</h4>
+                                            <h4 className=" text-gray-600 dark:text-gray-300 font-extrabold text-2xl hover:text-[#FF497C]">{craftCategory.subcategory}</h4>
                                             <button className="transition ease-in duration-300 bg-gray-800  text-[#FF497C] shadow hover:text-black hover:bg-red-500 hover:shadow-md  rounded-full w-8 h-8 text-center p-1">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -63,10 +68,13 @@ const ArtCraftCategories = () => {
                                         </div>
                                         <p className=" text-gray-600 dark:text-gray-300">{craftCategory.description}</p>
                                     </div>
-                                    <div className="btn  text-white bg-[#F00] hover:bg-violet-700 border-none w-full p-2 rounded-md text-center flex text-lg">
-                                        <button>Explore </button>
+
+                                    <Link to={`/artCraftCategories/${craftCategory.subcategory}`} className="btn  text-white bg-[#F00] hover:bg-violet-700 border-none w-full p-2 rounded-md text-center flex text-lg" >
+                                        Explore
                                         <span className=" text-xl"><MdOutlineExplore /></span>
-                                    </div>
+                                    </Link>
+
+
                                 </div>
                             </div>
                         </div>

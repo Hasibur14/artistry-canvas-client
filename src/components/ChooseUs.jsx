@@ -6,11 +6,10 @@ import choose3 from '../assets/images/choose-us/4.webp';
 const ChooseUs = () => {
     return (
         <div >
-            <section className="container mx-auto my-16 space-y-8">
+            <section className="container mx-auto my-10 lg:my-24 lg:mt-28 space-y-8">
                 <div className="text-center space-y-4">
-                    <h2 className="text-2xl lg:text-5xl font-bold">Why Choose Us</h2>
-                    <p className="text-xl">Creating a tour blog can be a fantastic way to share your travel experiences,<br /> insights, and tips
-                        with others. Here are some steps and tips to help you get started with your tour blog.</p>
+                    <h2 className="text-2xl  lg:text-5xl font-bold">Why Choose Us</h2>
+                    <p className="text-xl">High-quality craftsmanship is often a key factor. People want art and craft items that are well-made, durable, and aesthetically pleasing</p>
                 </div>
                 <div className="lg:flex justify-between space-y-8 lg:space-y-0">
                     <div className="bg-violet-200 lg:w-[48%] p-8 rounded-lg shadow-md space-y-6" data-aos="flip-left"
