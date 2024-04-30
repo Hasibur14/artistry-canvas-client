@@ -1,4 +1,4 @@
-
+import { Typewriter } from 'react-simple-typewriter';
 import choose1 from '../assets/images/choose-us/1.webp';
 import choose2 from '../assets/images/choose-us/2.webp';
 import choose3 from '../assets/images/choose-us/4.webp';
@@ -8,8 +8,30 @@ const ChooseUs = () => {
         <div >
             <section className="container mx-auto my-10 lg:my-24 lg:mt-28 space-y-8">
                 <div className="text-center space-y-4">
-                    <h2 className="text-2xl  lg:text-5xl font-bold">Why Choose Us</h2>
-                    <p className="text-xl">High-quality craftsmanship is often a key factor. People want art and craft items that are well-made, durable, and aesthetically pleasing</p>
+                    <h2 className="text-2xl  lg:text-5xl font-bold">Why
+                        <span style={{ color: 'red', fontWeight: 'bold' }}>
+                            <Typewriter
+                                words={[' Choose Us', ' Choose Art Craft']}
+                                loop={10}
+                                cursor
+                                cursorStyle='.'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                            />
+                        </span></h2>
+                    <p className="text-xl">
+                        <span style={{ color: 'Black', fontWeight: 'bold' }}>
+                            <Typewriter
+                                words={[' High-quality craftsmanship is often a key factor. People want art and craft items that are well-made, durable, and aesthetically pleasing', ' High-quality craftsmanship is often a key factor. People want art and craft items that are well-made, durable, and aesthetically pleasing']}
+                                loop={10}
+                                cursor
+                                cursorStyle='.'
+                                typeSpeed={30}
+                                deleteSpeed={20}
+                                delaySpeed={1000}
+                            />
+                        </span></p>
                 </div>
                 <div className="lg:flex justify-between space-y-8 lg:space-y-0">
                     <div className="bg-violet-200 lg:w-[48%] p-8 rounded-lg shadow-md space-y-6" data-aos="flip-left"

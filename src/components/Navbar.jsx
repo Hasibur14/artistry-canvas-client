@@ -55,6 +55,7 @@ const Navbar = () => {
 
     return (
         <div className={` fixed z-10 w-full shadow-md ${theme === 'synthwave' ? 'dark' : 'bg-neutral-100'}`}>
+            
             <div className="navbar flex justify-between lg:mx-16">
                 <div className="navbar">
                     {/* Dropdown for mobile view */}

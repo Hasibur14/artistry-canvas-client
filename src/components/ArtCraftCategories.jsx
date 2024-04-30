@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 import { MdOutlineExplore } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { LinearGradient } from 'react-text-gradients';
-
+import { Typewriter } from 'react-simple-typewriter';
 
 const ArtCraftCategories = () => {
 
@@ -24,13 +22,28 @@ const ArtCraftCategories = () => {
 
     return (
         <div className='container mx-auto my-28'>
-             <Helmet>
-                <title>ArtCraftCategories - Artistry Canvas</title>
-            </Helmet>
             <div className='text-center mb-10'>
-            <h2 className='text-5xl font-bold text-center'><LinearGradient gradient={['to left', '#F00 ,#DB0CCB']}>
-            Browse By Art &Craft
-                    </LinearGradient></h2>
+                <h2 className='text-5xl font-bold text-center'>
+                    Browse By
+                    <span style={{ color: 'red', fontWeight: 'bold' }}>
+                        <Typewriter
+                            words={[' Landscape Painting',
+                                ' Portrait Drawing',
+                                'Watercolor Painting',
+                                'Oil Painting',
+                                'Charcoal Sketching',
+                                'Cartoon Drawing'
+
+                            ]}
+                            loop={5}
+                            cursor
+                            cursorStyle='-'
+                            typeSpeed={70}
+                            deleteSpeed={40}
+                            delaySpeed={1000}
+                        />
+                    </span>
+                </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
                 {

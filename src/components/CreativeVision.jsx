@@ -1,11 +1,35 @@
+import { Typewriter } from 'react-simple-typewriter';
 import title2 from '../assets/images/title2.png';
 
 const CreativeVision = () => {
     return (
         <div className='my-24'>
             <div className="text-center space-y-4">
-                <h3 className="text-2xl lg:text-5xl font-bold">Unleash Our Creative Vision</h3>
-                <p className="w-[50%] mx-auto opacity-70">Step into our art and craft section, where creativity knows no bounds. Wander through a world of imagination and skill, where every stroke of a brush and every delicate stitch tells a story.!</p>
+                <h3 className="text-2xl lg:text-5xl font-bold">
+                <span style={{ color: 'red', fontWeight: 'bold' }}>
+                        <Typewriter
+                            words={[' Unleash Our Creative Vision', ' Unleash Our Creative Vision']}
+                            loop={10}
+                            cursor
+                            cursorStyle='.'
+                            typeSpeed={70}
+                            deleteSpeed={50}
+                            delaySpeed={1000}
+                        />
+                    </span></h3>
+                <p className="w-[50%] mx-auto opacity-70">
+                <span style={{ color: 'black', fontWeight: 'bold' }}>
+                        <Typewriter
+                            words={['Step into our art and craft section, where creativity knows no bounds. Wander through a world of imagination and skill, where every stroke of a brush and every delicate stitch tells a story.!', ' ']}
+                            loop={10}
+                            cursor
+                            cursorStyle='.'
+                            typeSpeed={30}
+                            deleteSpeed={10}
+                            delaySpeed={1000}
+                        />
+                    </span>
+                </p>
             </div>
 
             <div className="container mx-auto mt-20 p-2 md:p-0">

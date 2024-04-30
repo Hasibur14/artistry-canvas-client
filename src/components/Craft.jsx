@@ -1,7 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { TbDetailsOff } from "react-icons/tb";
 import { Link } from "react-router-dom";
 AOS.init();
@@ -15,9 +14,6 @@ const Craft = ({ craft }) => {
 
     return (
         <div>
-             <Helmet>
-                <title>Craft - Artistry Canvas</title>
-            </Helmet>
             <div className="w-full bg-white border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5]" data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom">
                 <div className="flex flex-col">

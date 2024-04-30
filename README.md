@@ -26,7 +26,15 @@ Live Link: https://assignment-10-8662a.web.app/
 
 
 
+
+
+
+
+
  ***npm package name:
+ 1.React Simple Typewriter
+ 2.lottie-react
+ 3. React-tooltip
  
 
 
