@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa6";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
@@ -18,7 +19,7 @@ const MyArtAndCraft = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/myArtAndCraft/${user?.email}`)
+            fetch(`https://assignment-10-server-psi-six.vercel.app/myArtAndCraft/${user?.email}`)
                 .then(response => response.json())
                 .then(data => {
                     setUserArtCrafts(data)
@@ -53,7 +54,7 @@ const MyArtAndCraft = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/artCraftDelete/${_id}`, {
+                fetch(`https://assignment-10-server-psi-six.vercel.app/artCraftDelete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -77,6 +78,9 @@ const MyArtAndCraft = () => {
 
     return (
         <div className="container mx-auto mt-8 mb-16">
+             <Helmet>
+                <title>MyArt&Craft - Artistry Canvas</title>
+            </Helmet>
             <div className='text-center'>
                 <h2 className='text-5xl font-bold'><LinearGradient gradient={['to left', '#F00 ,#DB0CCB']}>
                   My Listed Data

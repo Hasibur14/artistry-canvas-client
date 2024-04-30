@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { MdOutlineExplore } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import { LinearGradient } from 'react-text-gradients';
 
 
 const ArtCraftCategories = () => {
@@ -9,7 +10,7 @@ const ArtCraftCategories = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/artCraftCategories')
+        fetch('https://assignment-10-server-psi-six.vercel.app/artCraftCategories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -23,8 +24,13 @@ const ArtCraftCategories = () => {
 
     return (
         <div className='container mx-auto my-28'>
+             <Helmet>
+                <title>ArtCraftCategories - Artistry Canvas</title>
+            </Helmet>
             <div className='text-center mb-10'>
-                <h2 className="text-2xl lg:text-5xl font-bold">Browse By Art &Craft</h2>
+            <h2 className='text-5xl font-bold text-center'><LinearGradient gradient={['to left', '#F00 ,#DB0CCB']}>
+            Browse By Art &Craft
+                    </LinearGradient></h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
                 {

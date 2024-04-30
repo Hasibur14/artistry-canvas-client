@@ -1,7 +1,7 @@
 
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { useContext, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -81,7 +81,7 @@ const Login = () => {
     return (
         <div>
             <Helmet>
-                <title></title>
+                <title>login - Artistry Canvas</title>
             </Helmet>
             <div className="hero my-10">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-200 border-2">

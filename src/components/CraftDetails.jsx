@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link, useLoaderData } from 'react-router-dom';
 
@@ -12,6 +13,9 @@ const CraftDetails = () => {
 
     return (
         <div className='container mx-auto my-10'>
+             <Helmet>
+                <title>CraftDetails - Artistry Canvas</title>
+            </Helmet>
             <section className="dark:bg-gray-100 border shadow-lg dark:text-gray-800">
                 <div className="container flex flex-col-reverse mx-auto lg:flex-row">
                     <div className="flex flex-col px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/3 xl:w-2/5 dark:bg-blue-600 dark:text-gray-50">

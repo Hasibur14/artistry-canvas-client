@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import { Link, Navigate } from "react-router-dom";
 
 
 const ErrorPage = () => {
     return (
         <div>
+             <Helmet>
+                <title>Error - Artistry Canvas</title>
+            </Helmet>
             <div>
             <section className='bg-white'>
                 <div className='container flex items-center min-h-screen px-6 py-12 mx-auto'>

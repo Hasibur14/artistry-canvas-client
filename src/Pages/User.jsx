@@ -1,15 +1,37 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../Provider/AuthProvider";
 
 
 const User = () => {
 
-    const { user } = useContext(AuthContext);
+    const { updateUserProfile, user } = useContext(AuthContext);
 
-    console.log(user)
+    const [username, setUsername] = useState(user.displayName || "");
+    const [imageURL, setImageURL] = useState(user.photoURL || "");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        updateUserProfile(username, imageURL)
+            .then(() => {
+                toast.success("Profile updated successfully");
+
+            })
+            .catch((error) => {
+                toast.error("Error updating profile:", error);
+            });
+    };
+
+
+
 
     return (
         <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-base-200 dark:bg-gray-100 dark:text-gray-800 border-2 shadow-xl shadow-rose-400 mt-10">
+             <Helmet>
+                <title>User - Artistry Canvas</title>
+            </Helmet>
             <div className="flex flex-col justify-between">
                 <div className="space-y-2">
                     <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Lets User info!</h2>
@@ -37,20 +59,35 @@ const User = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Phonenumber" className="w-4 h-4">
                                     <path fill="currentColor" d="M449.366,89.648l-.685-.428L362.088,46.559,268.625,171.176l43,57.337a88.529,88.529,0,0,1-83.115,83.114l-57.336-43L46.558,362.088l42.306,85.869.356.725.429.684a25.085,25.085,0,0,0,21.393,11.857h22.344A327.836,327.836,0,0,0,461.222,133.386V111.041A25.084,25.084,0,0,0,449.366,89.648Zm-20.144,43.738c0,163.125-132.712,295.837-295.836,295.837h-18.08L87,371.76l84.18-63.135,46.867,35.149h5.333a120.535,120.535,0,0,0,120.4-120.4v-5.333l-35.149-46.866L371.759,87l57.463,28.311Z"></path>
                                 </svg>
-                                <span className="dark:text-gray-600">+25 381 77 983</span>
+                                <span className="dark:text-gray-600">+008 1414 1415</span>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <form noValidate="" className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate="" className="space-y-6">
                 <div>
                     <label htmlFor="name" className="text-sm">Full name</label>
-                    <input id="name" type="text" placeholder="" className="w-full p-3 rounded dark:bg-gray-100" />
+                    <input
+                        id="username"
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Username"
+                        className="w-full rounded-full p-3"
+                        required
+                    />
                 </div>
                 <div>
-                    <label htmlFor="email" className="text-sm">Email</label>
-                    <input id="email" type="email" className="w-full p-3 rounded dark:bg-gray-100" />
+                    <label htmlFor="email" className="text-sm">Image URL</label>
+                    <input
+                        id="imageURL"
+                        type="text"
+                        value={imageURL}
+                        onChange={(e) => setImageURL(e.target.value)}
+                        placeholder="Image URL"
+                        className="w-full rounded-full p-3"
+                    />
                 </div>
                 <div>
                     <label htmlFor="message" className="text-sm">Message</label>

@@ -1,11 +1,14 @@
 import { useContext } from "react";
+import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 import { AuthContext } from "../Provider/AuthProvider";
 
 
 const AddCraft = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user  } = useContext(AuthContext);
 
 
     const handleAddCraft = e => {
@@ -21,10 +24,11 @@ const AddCraft = () => {
         const price = formData.get('price');
         const stock = formData.get('stock');
         const userEmail = user.email;
+        const userName = user.displayName;
 
-        const newCraft = { item, subcategory, description, image, rating, customization, time, price, stock, userEmail };
+        const newCraft = { item, subcategory, description, image, rating, customization, time, price, stock, userEmail , userName};
 
-        fetch('http://localhost:5000/artCraft', {
+        fetch('https://assignment-10-server-psi-six.vercel.app/artCraft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,6 +45,7 @@ const AddCraft = () => {
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
+                    toast.success('Added Successfully')
                 }
             })
     }
@@ -50,6 +55,10 @@ const AddCraft = () => {
 
     return (
         <div className="container mx-auto my-10">
+            <Helmet>
+                <title>AddArt&Craft - Artistry
+Canvas</title>
+            </Helmet>
             <section className="p-6 border-2 dark:bg-gray-100 dark:text-gray-900 rounded-2xl bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4] ">
                 <div className="text-center">
                     <h2 className="lg:text-3xl font-bold">Add Art And Craft</h2>

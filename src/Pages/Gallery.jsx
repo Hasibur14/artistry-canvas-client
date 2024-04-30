@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { LinearGradient } from 'react-text-gradients'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery10 from '../assets/images/gallery-10.png'
@@ -15,10 +16,13 @@ import gallery9 from '../assets/images/gallery-9.jpg'
 const Gallery = () => {
     return (
         <div>
+            <Helmet>
+                <title>Gallery - Artistry Canvas</title>
+            </Helmet>
             <div className='text-center mt-10'>
                 <h1 className='text-5xl font-bold'>
                     <LinearGradient gradient={['to left', '#F00 ,#DB0CCB']}>
-                    Artistry Canvas  Gallery
+                        Artistry Canvas  Gallery
                     </LinearGradient>
                 </h1>
             </div>

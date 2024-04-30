@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,7 +27,7 @@ const UpdateArtCraft = () => {
         console.log(updateCraft);
 
 
-        fetch(`http://localhost:5000/artCraftUpdate/${id}`, {
+        fetch(`https://assignment-10-server-psi-six.vercel.app/artCraftUpdate/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,6 +47,9 @@ const UpdateArtCraft = () => {
     return (
         <div>
             <div className="container mx-auto my-10">
+            <Helmet>
+                <title>UpdateArtCraft - Artistry Canvas</title>
+            </Helmet>
                 <section className="p-6 border-2 dark:bg-gray-100 dark:text-gray-900 rounded-2xl bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4] ">
                     <div className="text-center">
                         <h2 className="lg:text-3xl font-bold">update Art And Craft</h2>

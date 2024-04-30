@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { TbDetailsOff } from "react-icons/tb";
 import { Link, useParams } from 'react-router-dom';
 AOS.init();
@@ -13,7 +14,7 @@ const SingleCategory = () => {
 
     useEffect(() => {
         if (subcategory) {
-            fetch(`http://localhost:5000/art/${subcategory}`)
+            fetch(`https://assignment-10-server-psi-six.vercel.app/art/${subcategory}`)
                 .then(res => res.json())
                 .then(data => {
                     setItems(data);
@@ -24,6 +25,9 @@ const SingleCategory = () => {
 
     return (
         <div className="container mx-auto  mt-10 mb-20">
+             <Helmet>
+                <title>Category - Artistry Canvas</title>
+            </Helmet>
             <h2 className="text-2xl lg:text-3xl text-center font-bold mb-10"><span className='font-extrabold'>Category: </span>     {subcategory}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
                 {items.map(item => (
@@ -91,9 +95,9 @@ const SingleCategory = () => {
                                 </div>
                                 <p>{item.description}</p>
                                 <div className="text-lg text-gray-500 font-semibold mt-1">
-                                <p>Process Time: {item.time}</p>
-                                   <p> Price : {item.price}$</p>
-                                   
+                                    <p>Process Time: {item.time}</p>
+                                    <p> Price : {item.price}$</p>
+
                                 </div>
 
                                 <div className="flex space-x-2 text-sm font-medium justify-start mt-5">

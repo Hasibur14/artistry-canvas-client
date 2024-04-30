@@ -30,24 +30,24 @@ const Router = createBrowserRouter([
             {
                 path: '/artCraftCategories',
                 element: <ArtCraftCategories></ArtCraftCategories>,
-                loader: () => fetch('http://localhost:5000/artCraftCategories')
+                loader: () => fetch('https://assignment-10-server-psi-six.vercel.app/artCraftCategories')
             },
             {
                 path: '/artCraftCategories/:subcategory',
                 element: <SingleCategory></SingleCategory>,
-                loader: ({params}) => fetch(`http://localhost:5000/artCraftCategories/${params.subcategory}`)
+                loader: ({params}) => fetch(`https://assignment-10-server-psi-six.vercel.app/artCraftCategories/${params.subcategory}`)
             },
             {
                 path: '/allArtAndCraft',
                 element: <AllArtAndCraft></AllArtAndCraft>,
-                loader: () => fetch('http://localhost:5000/artCraft')
+                loader: () => fetch('https://assignment-10-server-psi-six.vercel.app/artCraft')
             },
             {
                 path: '/artCraft/:id',
                 element: <PrivetRoute><CraftDetails></CraftDetails></PrivetRoute>,
 
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/artCraft/${params.id}`)
+                    fetch(`https://assignment-10-server-psi-six.vercel.app/artCraft/${params.id}`)
 
             },
             {
@@ -61,7 +61,7 @@ const Router = createBrowserRouter([
             {
                 path: '/artCraftUpdate/:id',
                 element: <PrivetRoute><UpdateArtCraft></UpdateArtCraft></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/artCraftUpdate/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-psi-six.vercel.app/artCraftUpdate/${params.id}`)
             },
             {
                 path: '/gallery',

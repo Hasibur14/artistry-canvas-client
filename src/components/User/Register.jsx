@@ -47,8 +47,8 @@ const Register = () => {
 
     return (
         <div>
-            <Helmet>
-                <title>Register</title>
+             <Helmet>
+                <title>Register - Artistry Canvas</title>
             </Helmet>
             <div className="hero my-10">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-200 border-2">
