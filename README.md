@@ -11,7 +11,6 @@
 ### Concept:
 The project "Artistry Canvas - Art & Craft Store" addresses the need for an online platform focused on art and craft enthusiasts. It aims to provide a comprehensive solution for users to explore, manage, and showcase their art and craft items. By integrating functionalities like category-based browsing, user authentication, item management, and dynamic data rendering, the project facilitates a seamless user experience tailored to the specific needs of artists and hobbyists.
 
-<hr>
 ### Features:
 1. **Category-Based Exploration**: Users can easily explore and navigate through various categories of art and craft items, simplifying the process of finding specific items of interest.
 
